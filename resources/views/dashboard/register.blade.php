@@ -3,9 +3,9 @@
 @section('title', 'Page Title')
 
 @section('content')
-    <div class="vh-100 vw-100 d-flex justify-content-center align-items-center" style="background-color: #F7F8FC;">
-        <div class="card bg-transparent border-0" style="width: 25rem;">
-            
+<div class="container" style="background-color: #F7F8FC;">
+    <div class="card bg-transparent border-0 mx-auto d-block py-5 col-sm-12 col-md-8 col-lg-6 col-xl-4">
+
             {{-- inicio --}}
             <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In  -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -72,29 +72,79 @@
                 <h3 class="card-title pt-5 text-center text-cadet font-weight-bold">
                     Create Auth User
                 </h3>
-                
+
                 <form class="mt-5">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome Completo" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                        <small id="emailHelp" class="form-text text-muted text-right"><a href="#pass" class="form-text text-violet text-right text-decoration-none">Esqueceu sua senha?</a></small>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite o Email" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">Digite um email válido.</small>
                     </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Digite a senha" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Confirme a senha" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <div class="list-group">
+                            <a style="cursor:pointer" class="list-group-item list-group-item-action {{-- active --}} rounded-sm" data-toggle="modal" data-target="#verificar">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-0">Verificação</h5>
+                                <small>Pendente</small>
+                              </div>
+                            </a>
+
+                            <!-- Modal -->
+<div class="modal fade" id="verificar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Verificação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <a href="https://sac.digital/" target="_blank">
+                <img src="{{ asset('img/pro.png') }}" class="mx-auto d-block" alt="..." width="200px">
+            </a>
+            <p class="h5 text-center my-3">Qual é o tema desse anúncio?</p>
+            <div class="px-3 text-center">
+                @for ($i = 0; $i < 5; $i++)
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline{{ $i }}" name="customRadioInline" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline{{ $i }}">Maquiagem {{ $i }}</label>
+                </div>
+                @endfor
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+          <button type="button" class="btn btn-primary">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+                        </div>
+                    </div>
+
+
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <label class="form-check-label" for="exampleCheck1">
+                            Eu aceito os <a href="#" class=""> Termos de Uso</a> e <a href="#"> Políticas de Privacidade</a>.
+                        </label>
                     </div>
                     <button type="submit" class="btn btn-violet btn-lg btn-block rounded-lg">Submit</button>
                 </form>
 
-                <p class="card-text text-manatee text-center py-3">Não tem conta? <a href="#criar" class="text-decoration-none text-violet"><strong>Criar Conta</strong></a></p>
+                <p class="card-text text-manatee text-center py-3">Já tem conta? <a href="{{ route('dashboard.index') }}" class="text-decoration-none text-violet"><strong>Fazer Login</strong></a></p>
 
-                <button type="submit" class="btn btn-outline-primary btn-lg btn-block rounded-lg"><i class="fab fa-facebook-f mr-3"></i>Entrar com Facebook</button>
-                <button type="submit" class="btn btn-outline-danger btn-lg btn-block rounded-lg"><i class="fab fa-google mr-3"></i>Entrar com Google</button>
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-block rounded-lg"><i class="fab fa-facebook-f mr-3"></i>Cadastro com Facebook</button>
+                <button type="submit" class="btn btn-outline-danger btn-lg btn-block rounded-lg"><i class="fab fa-google mr-3"></i>Cadastro com Google</button>
             </div>
         </div>
     </div>

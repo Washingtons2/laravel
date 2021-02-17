@@ -54,4 +54,8 @@ class DashboardsController extends Controller
     {
         return view('dashboard.register');
     }
+    public function repass()
+    {
+        return view('dashboard.repass');
+    }
 }
