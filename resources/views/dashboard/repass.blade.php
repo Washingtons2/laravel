@@ -70,15 +70,12 @@
 
             <div class="card-body">
                 <h3 class="card-title pt-5 text-center text-cadet font-weight-bold">
-                    Auth Dashboard
+                    Re-password Auth
                 </h3>
 
-                <livewire:form-login-dashboard />
+                <livewire:form-repass />
 
-                <p class="card-text text-manatee text-center py-3">Não tem conta? <a href="{{ route('dashboard.register') }}" class="text-decoration-none text-violet"><strong>Criar Conta</strong></a></p>
-
-                <button type="submit" class="btn btn-outline-primary btn-lg btn-block rounded-lg"><i class="fab fa-facebook-f mr-3"></i>Entrar com Facebook</button>
-                <button type="submit" class="btn btn-outline-danger btn-lg btn-block rounded-lg"><i class="fab fa-google mr-3"></i>Entrar com Google</button>
+                <p class="card-text text-manatee text-center py-3">Lembrou a senha? <a href="{{ route('dashboard.login') }}" class="text-decoration-none text-violet"><strong>Logar</strong></a></p>
             </div>
         </div>
     </div>

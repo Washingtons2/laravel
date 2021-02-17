@@ -25,4 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardsController@index')->name('dashboard.index');
 Route::get('/dashboard/login', 'DashboardsController@login')->name('dashboard.login');
 Route::post('/dashboard/login', 'DashboardsController@startlogin')->name('dashboard.startlogin');
+Route::get('/dashboard/login/repass', 'DashboardsController@repass')->name('dashboard.repass');
 Route::get('/dashboard/register', 'DashboardsController@register')->name('dashboard.register');
+Route::get('/dashboard/home', 'DashboardsController@home')->name('dashboard.home');

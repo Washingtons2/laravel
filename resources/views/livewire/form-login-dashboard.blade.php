@@ -6,7 +6,7 @@
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Sua Senha" id="exampleInputPassword1">
-                        <small id="emailHelp" class="form-text text-muted text-right"><a href="#pass" class="form-text text-violet text-right text-decoration-none">Esqueceu sua senha?</a></small>
+                        <small id="emailHelp" class="form-text text-muted text-right"><a href="{{ route('dashboard.repass') }}" class="form-text text-violet text-right text-decoration-none">Esqueceu sua senha?</a></small>
                     </div>
                     {{-- <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">

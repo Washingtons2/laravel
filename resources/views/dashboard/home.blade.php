@@ -3,36 +3,53 @@
 @section('title', 'Page Title')
 
 @section('content')
-    <div class="container" style="background-color: #F7F8FC;">
-        <div class="card bg-transparent border-0 mx-auto d-block py-5 col-sm-12 col-md-8 col-lg-6 col-xl-4">
-            <a href="https://sac.digital/" target="_blank">
-                <img src="{{ asset('img/pro.png') }}" class="img-fluid" alt="...">
-            </a>
-            <h3 class="card-title pt-5 text-center text-cadet font-weight-bold" id="spinner">
-                <div class="spinner-border text-violet" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </h3>
-            <div class="card-body d-none">
-                <h3 class="card-title pt-2 text-center text-cadet font-weight-bold">
-                    Welcome to SAC DIGITAL
-                </h3>
-                <p class="card-text text-manatee text-center pb-2">Some quick example text to build on the card title and make up the title and make up the bulk of the card's content.</p>
-                <a class="btn btn-violet btn-lg btn-block rounded-lg" href="{{ route('dashboard.startlogin') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    Continuar
+    <div class="container">
+        <div class="card bg-transparent border-0 mx-auto d-block py-4 col-sm-12 col-md-8 col-lg-6 col-xl-4">
+            
+            <nav class="navbar navbars navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('img/logo.svg') }}" width="30" height="30" alt="" loading="lazy">
                 </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    {{-- <span class="navbar-toggler-icon"></span> --}}
+                    <span class="fas fa-bars"></span>
+                </button>
 
-                <form id="logout-form" action="{{ route('dashboard.startlogin') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
 
+            <div class="card-body px-0">
+            
+                {{-- @include('components.swipe') --}}
             </div>
+
         </div>
-        <script>
-            setTimeout(function(){
-                $('#spinner').addClass('d-none');
-                $('.card-body').removeClass('d-none');
-            }, 600);
-        </script>
     </div>
 @endsection

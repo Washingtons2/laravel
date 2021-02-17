@@ -13,7 +13,7 @@ class DashboardsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.home');
+        return view('dashboard.index');
     }
 
     /**
@@ -57,5 +57,9 @@ class DashboardsController extends Controller
     public function repass()
     {
         return view('dashboard.repass');
+    }
+    public function home()
+    {
+        return view('dashboard.home');
     }
 }
