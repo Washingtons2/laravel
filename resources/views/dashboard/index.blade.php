@@ -32,7 +32,7 @@
             setTimeout(function(){
                 $('#spinner').addClass('d-none');
                 $('.card-body').removeClass('d-none');
-            }, 600);
+            }, 6000);
         </script>
     </div>
 @endsection
