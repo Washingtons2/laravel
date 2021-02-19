@@ -28,3 +28,5 @@ Route::post('/dashboard/login', 'DashboardsController@startlogin')->name('dashbo
 Route::get('/dashboard/login/repass', 'DashboardsController@repass')->name('dashboard.repass');
 Route::get('/dashboard/register', 'DashboardsController@register')->name('dashboard.register');
 Route::get('/dashboard/home', 'DashboardsController@home')->name('dashboard.home');
+
+Route::resource('/dashboard/shops/', 'ShopsController');

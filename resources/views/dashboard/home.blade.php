@@ -31,23 +31,38 @@
                     </li> --}}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="mr-2 rounded-sm" src="{{ asset('img/perfil.jpg') }}" width="30" height="30" alt="" loading="lazy"> Washington Santos
+                            Washington Santos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Sair</a>
                         </div>
                     </li>
+
+                    <!-- Menu premium -->
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <strong>PREMIUM</strong> <small>até 20/03/2021</small>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Sair</a>
+                      </div>
+                  </li>
+
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disable</a>
                     </li>
                     </ul>
                 </div>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto mt-2">
+                <div class="collapse navbar-collapse pb-3" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto mt-2 mb-2">
                     <li class="nav-item active">
                         <a class="nav-link text-violet" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
@@ -66,12 +81,14 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disable</a>
                     </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Search">
+                    <button class="btn btn-outline-violet my-2 my-sm-0" type="submit">
+                      <i class="fas fa-search"></i>
+                    </button>
                     </form>
                 </div>
 
@@ -79,11 +96,11 @@
                     <div class="list-group my-3">
                         <a href="#" class="list-group-item list-group-item-action">
                           <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small>3 days ago</small>
+                            <h5 class="mb-1">Novo pedido!</h5>
+                            <small>18/02/2021 - 20:57</small>
                           </div>
-                          <p class="mb-1">Some placeholder content in a paragraph.</p>
-                          <small>And some small print.</small>
+                          <p class="mb-1">Pedido finalizado com sucesso, pagamento realizado via PICPAY, realize a consulta antes de enviar os produtos.</p>
+                          <small>Alguma informação vem aqui</small>
                         </a>
                         <a href="#" class="list-group-item list-group-item-action">
                           <div class="d-flex w-100 justify-content-between">
@@ -106,13 +123,16 @@
             </nav>
 
             <div class="card-body px-0">
-                <div class="card">
+
+              @for ($i = 0; $i < 10; $i++)
+
+                <div class="card mb-3">
                     <div class="card-body">
                       <div class="d-flex w-100 justify-content-between">
                         <h5 class="card-title">@washingtons2 <i class="fas fa-check ml-1 text-success"></i></h5>
                         <small><i class="fas fa-medal text-violet fa-2x"></i></small>
                       </div>
-                      <h6 class="card-subtitle mb-2 text-muted">Loja do Washington</h6>
+                      <h6 class="card-subtitle mb-3 text-muted">Loja do Washington</h6>
                       <p class="card-text">
                         <div class="progress mb-2">
                             <div class="progress-bar bg-violet w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -121,9 +141,25 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Seguir nosso <a href="#" class="text-link text-violet">perfil</a> Instagram.</li>
                             <li class="list-group-item">Adionar o primeiro <a href="#" class="text-link text-violet">produto</a>.</li>
-                            <li class="list-group-item">Copiar <a href="#" class="text-link text-violet">link</a> de compartilhamento.</li>
+                            <li class="list-group-item">Realizar o primeiro <a href="#" class="text-link text-violet">compartilhamento</a>.</li>
                           </ul>
                       </p>
+                      <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-violet">Compartilhar</button>
+                        <button type="button" class="btn btn-violet">Editar</button>
+                        <button type="button" class="btn btn-outline-violet">Ver</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  @endfor
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="card-title">@washingtons2 <i class="fas fa-check ml-1 text-success"></i></h5>
+                        <small><i class="fas fa-medal text-violet fa-2x"></i></small>
+                      </div>
+                      <h6 class="card-subtitle mb-3 text-muted">Loja do Washington</h6>
                       <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                         <button type="button" class="btn btn-outline-violet">Compartilhar</button>
                         <button type="button" class="btn btn-violet">Editar</button>
