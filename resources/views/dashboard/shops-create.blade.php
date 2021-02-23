@@ -142,6 +142,9 @@
                         <form class="mt-2">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Fotos do produto</label>
+
+                                <img src="{{ asset("img/no-product-image.svg") }}" class="img-thumbnail d-block mb-3" alt="...">
+
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1">
                                 <small id="emailHelp" class="form-text text-muted">A primeira foto será considerada foto principal da exibição do produto.</small>
                             </div>
@@ -155,13 +158,33 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Promoção</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                      <div class="input-group-text">
-                                        <input type="checkbox" aria-label="Checkbox for following text input">
+
+                                <div class="form-row">
+                                  <div class="col-12 mb-3">
+
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                          <input type="checkbox" aria-label="Checkbox for following text input">
+                                        </div>
                                       </div>
+                                      <input type="text" class="form-control" aria-label="Text input with checkbox" disabled>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+
+                                  </div>
+                                </div>
+
+                                <div class="form-row">
+
+                                  <div class="col-6 mb-2">
+                                    <small class="" for="validationCustom04">Inicio</small>
+                                    <input type="date" class="form-control form-control-sm" id="validationCustom05" disabled>
+                                  </div>
+                                  <div class="col-6 mb-2">
+                                    <small class="" for="validationCustom04">Fim</small>
+                                    <input type="date" class="form-control form-control-sm" id="validationCustom05" disabled>
+                                  </div>
+
                                 </div>
                             </div>
                             <div class="form-group">
@@ -169,32 +192,67 @@
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                             </div>
                             <div class="form-group">
-                              <label for="exampleFormControlSelect1">Variações</label>
-                              <button class="btn btn-outline-violet btn-block mb-3">Adicionar</button>
-                              <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Tamanhos</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="list-group">
+                              <label for="exampleFormControlSelect1">Outros</label>
+                              <div class="btn-group btn-block mb-3" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-violet">Estoque</button>
+                                <button type="button" class="btn btn-outline-violet">Variação</button>
+                              </div>
+
+                              @if (1 != 1)
+
+                              <ul class="list-group mb-2">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                  Cor: Amarelo | Tamanho: M | Quantidade: 100
+                                  <a href="#" class="badge badge-transparent badge-pill"><i class="fas fa-edit text-violet" style="font-size: 15px"></i></a>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                  Cor: Amarelo | Tamanho: M | Quantidade: 100
+                                  <a href="#" class="badge badge-transparent badge-pill"><i class="fas fa-edit text-violet" style="font-size: 15px"></i></a>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                  Cor: Amarelo | Tamanho: M | Quantidade: 100
+                                  <a href="#" class="badge badge-transparent badge-pill"><i class="fas fa-edit text-violet" style="font-size: 15px"></i></a>
+                                </li>
+                              </ul>
+                              <button class="btn btn-outline-violet btn-block my-3">Adicionar</button>
+
+                              @else
+
+                              <ul class="list-group mb-3">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                  Quantidade: 1000000
+                                  <a href="#" class="badge badge-transparent badge-pill"><i class="fas fa-edit text-violet" style="font-size: 15px"></i></a>
+                                </li>
+                              </ul>
+
+                              @for ($i = 0; $i < 1; $i++)
+
+                                <div class="list-group mb-2">
                                     <div class="list-group-item list-group-item-action">
                                       <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">Tamanho</h5>
+                                        <h5 class="mb-1">Cores</h5>
                                       </div>
-                                      <p class="mb-1">P ,M, G, GG, XG</p>
-                                      <small>Tamanhos de roupas disponives na loja.</small>
+                                      <p class="mb-0">P ,M, G, GG, XG</p>
                                     </div>
                                 </div>
+
+                                <div class="list-group mb-2">
+                                  <div class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Tamanho</h5>
+                                    </div>
+                                    <p class="mb-0">P ,M, G, GG, XG</p>
+                                  </div>
+                                </div>
+
+                                @endfor
+
+                                <button class="btn btn-outline-violet btn-block my-3">Adiconar</button>
+
+                              @endif
+
                             </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Controle de estoque</label>
-                                <button type="button" class="btn btn-secondary btn-block" disabled>Controle de estoque</button>
-                                <small>Laçamento em breve.</small>
-                            </div>
+
 
                         </form>
                         <!-- formulário -->
