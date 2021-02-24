@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 
 Auth::routes();
 
@@ -30,3 +30,5 @@ Route::get('/dashboard/register', 'DashboardsController@register')->name('dashbo
 Route::get('/dashboard/home', 'DashboardsController@home')->name('dashboard.home');
 
 Route::resource('/dashboard/shops/', 'ShopsController');
+
+Route::get('/view/{shop}', 'ViewsController@index')->name('view.index');
